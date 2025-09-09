@@ -11,30 +11,21 @@ import com.amer.inventory.ui.item.ItemDetailsViewModel
 import com.amer.inventory.ui.item.ItemEditViewModel
 import com.amer.inventory.ui.item.ItemEntryViewModel
 
-
 /**
  * Provides Factory to create instance of ViewModel for the entire Inventory app
  */
 object AppViewModelProvider {
     val Factory = viewModelFactory {
         // Initializer for ItemEditViewModel
-        initializer {
-            ItemEditViewModel(this.createSavedStateHandle())
-        }
+        initializer { ItemEditViewModel(this.createSavedStateHandle()) }
         // Initializer for ItemEntryViewModel
-        initializer {
-            ItemEntryViewModel()
-        }
+        initializer { ItemEntryViewModel() }
 
         // Initializer for ItemDetailsViewModel
-        initializer {
-            ItemDetailsViewModel(this.createSavedStateHandle())
-        }
+        initializer { ItemDetailsViewModel(this.createSavedStateHandle()) }
 
         // Initializer for HomeViewModel
-        initializer {
-            HomeViewModel()
-        }
+        initializer { HomeViewModel() }
     }
 }
 

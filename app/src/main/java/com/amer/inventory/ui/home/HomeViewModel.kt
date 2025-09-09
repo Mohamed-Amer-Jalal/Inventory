@@ -7,12 +7,14 @@ import com.amer.inventory.data.Item
  * ViewModel to retrieve all items in the Room database.
  */
 class HomeViewModel : ViewModel() {
+
     /**
      * Companion object for the HomeViewModel.
      *
      * Contains constants used within the ViewModel.
      */
     companion object {
+
         /**
          * The timeout in milliseconds for database operations.
          */

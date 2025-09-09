@@ -7,7 +7,6 @@ import androidx.lifecycle.ViewModel
 import com.amer.inventory.data.Item
 import java.text.NumberFormat
 
-
 /**
  * ViewModel to validate and insert items in the Room database.
  * This ViewModel is responsible for managing the UI state of the item entry screen
@@ -37,12 +36,10 @@ class ItemEntryViewModel : ViewModel() {
      * @param uiState The current UI state of the item details.
      * @return True if all input fields (name, price, quantity) are not blank, false otherwise.
      */
-    private fun validateInput(uiState: ItemDetails = itemUiState.itemDetails): Boolean {
-        return with(uiState) {
-            name.isNotBlank() && price.isNotBlank() && quantity.isNotBlank()
-        }
-    }
+    private fun validateInput(uiState: ItemDetails = itemUiState.itemDetails): Boolean =
+        with(uiState) { name.isNotBlank() && price.isNotBlank() && quantity.isNotBlank() }
 }
+
 
 /**
  * Represents the UI state for an item.
@@ -87,9 +84,7 @@ fun ItemDetails.toItem(): Item = Item(
  *
  * @return A [String] representing the formatted price.
  */
-fun Item.formatedPrice(): String {
-    return NumberFormat.getCurrencyInstance().format(price)
-}
+fun Item.formatedPrice(): String = NumberFormat.getCurrencyInstance().format(price)
 
 /**
  * Extension function to convert [Item] to [ItemUiState]

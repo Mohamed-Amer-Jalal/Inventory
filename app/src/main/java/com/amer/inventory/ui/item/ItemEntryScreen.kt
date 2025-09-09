@@ -38,10 +38,12 @@ import java.util.Locale
  * which is used for adding new items to the inventory.
  */
 object ItemEntryDestination : NavigationDestination {
+
     /**
      * Unique name that identifies the destination
      */
     override val route = "item_entry"
+
     /**
      * String resource ID for the title of the screen displayed in the top app bar.
      */
@@ -198,10 +200,10 @@ fun ItemInputForm(
 @Composable
 private fun ItemEntryScreenPreview() {
     InventoryTheme {
-        ItemEntryBody(itemUiState = ItemUiState(
-            ItemDetails(
-                name = "Item name", price = "10.00", quantity = "5"
-            )
-        ), onItemValueChange = {}, onSaveClick = {})
+        ItemEntryBody(
+            itemUiState = ItemUiState(
+                ItemDetails(name = "Item name", price = "10.00", quantity = "5")
+            ), onItemValueChange = {}, onSaveClick = {}
+        )
     }
 }

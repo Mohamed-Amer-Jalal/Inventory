@@ -46,6 +46,7 @@ import com.amer.inventory.ui.theme.InventoryTheme
  * Navigation destination for the Item Details screen.
  */
 object ItemDetailsDestination : NavigationDestination {
+
     /**
      * Unique name that identifies the screen.
      */
@@ -95,7 +96,6 @@ fun ItemDetailsScreen(
                 onClick = { navigateToEditItem(0) },
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier.padding(dimensionResource(id = R.dimen.padding_large))
-
             ) {
                 Icon(
                     imageVector = Icons.Default.Edit,
@@ -191,30 +191,22 @@ fun ItemDetails(item: Item, modifier: Modifier = Modifier) {
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(dimensionResource(id = R.dimen.padding_medium)),
-            verticalArrangement = Arrangement.spacedBy(
-                dimensionResource(id = R.dimen.padding_medium)
-            )
+            verticalArrangement = Arrangement.spacedBy(dimensionResource(id = R.dimen.padding_medium))
         ) {
             ItemDetailsRow(
                 labelResID = R.string.item,
                 itemDetail = item.name,
-                modifier = Modifier.padding(
-                    horizontal = dimensionResource(id = R.dimen.padding_medium)
-                )
+                modifier = Modifier.padding(horizontal = dimensionResource(id = R.dimen.padding_medium))
             )
             ItemDetailsRow(
                 labelResID = R.string.quantity_in_stock,
                 itemDetail = item.quantity.toString(),
-                modifier = Modifier.padding(
-                    horizontal = dimensionResource(id = R.dimen.padding_medium)
-                )
+                modifier = Modifier.padding(horizontal = dimensionResource(id = R.dimen.padding_medium))
             )
             ItemDetailsRow(
                 labelResID = R.string.price,
                 itemDetail = item.formatedPrice(),
-                modifier = Modifier.padding(
-                    horizontal = dimensionResource(id = R.dimen.padding_medium)
-                )
+                modifier = Modifier.padding(horizontal = dimensionResource(id = R.dimen.padding_medium))
             )
         }
     }
@@ -229,9 +221,9 @@ fun ItemDetails(item: Item, modifier: Modifier = Modifier) {
  */
 @Composable
 private fun ItemDetailsRow(
+    modifier: Modifier = Modifier,
     @StringRes labelResID: Int,
     itemDetail: String,
-    modifier: Modifier = Modifier,
 ) {
     Row(modifier = modifier) {
         Text(stringResource(labelResID))
@@ -259,14 +251,10 @@ private fun DeleteConfirmationDialog(
         text = { Text(stringResource(R.string.delete_question)) },
         modifier = modifier,
         dismissButton = {
-            TextButton(onClick = onDeleteCancel) {
-                Text(stringResource(R.string.no))
-            }
+            TextButton(onClick = onDeleteCancel) { Text(stringResource(R.string.no)) }
         },
         confirmButton = {
-            TextButton(onClick = onDeleteConfirm) {
-                Text(stringResource(R.string.yes))
-            }
+            TextButton(onClick = onDeleteConfirm) { Text(stringResource(R.string.yes)) }
         }
     )
 }

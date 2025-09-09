@@ -25,7 +25,5 @@ class AppDataContainer(private val context: Context) : AppContainer {
      * Lazily initialized [ItemsRepository] implementation.
      * This property provides an instance of [OfflineItemsRepository].
      */
-    override val itemsRepository: ItemsRepository by lazy {
-        OfflineItemsRepository()
-    }
+    override val itemsRepository: ItemsRepository by lazy { OfflineItemsRepository() }
 }

@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModel
 /**
  * ViewModel to retrieve and update an item from the [com.amer.inventory.data.ItemsRepository]'s data source.
  */
-class ItemEditViewModel(savedStateHandle: SavedStateHandle, ) : ViewModel() {
+class ItemEditViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
 
     /**
      * Holds current item ui state. This is a private set property, meaning the UI state can only be

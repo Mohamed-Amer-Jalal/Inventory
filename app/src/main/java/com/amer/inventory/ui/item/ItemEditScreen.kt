@@ -23,6 +23,7 @@ import com.amer.inventory.ui.theme.InventoryTheme
  * Navigation destination for the Item Edit screen.
  */
 object ItemEditDestination : NavigationDestination {
+
     /**
      * Unique name to define the path for a composable
      */

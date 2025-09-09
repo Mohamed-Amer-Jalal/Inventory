@@ -16,6 +16,7 @@ class ItemDetailsViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
      * Contains constants used within the ViewModel.
      */
     companion object {
+
         /**
          * Timeout for item deletion, in milliseconds.
          */
@@ -31,5 +32,5 @@ class ItemDetailsViewModel(savedStateHandle: SavedStateHandle) : ViewModel() {
  */
 data class ItemDetailsUiState(
     val outOfStock: Boolean = true,
-    val itemDetails: ItemDetails = ItemDetails()
+    val itemDetails: ItemDetails = ItemDetails(),
 )

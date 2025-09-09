@@ -23,10 +23,7 @@ import com.amer.inventory.ui.item.ItemEntryScreen
  * @param modifier Optional Modifier to be applied to the NavHost.
  */
 @Composable
-fun InventoryNavHost(
-    navController: NavHostController,
-    modifier: Modifier = Modifier,
-) {
+fun InventoryNavHost(navController: NavHostController, modifier: Modifier = Modifier) {
     NavHost(
         navController = navController,
         startDestination = HomeDestination.route,
